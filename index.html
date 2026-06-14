@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>edwardp20的博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f7fc;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            padding: 2rem 1rem;
+        }
+
+        /* 优雅容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 头部区域 — 干净利落 */
+        .hero {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, #1e2b3c, #0f1a24);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease;
+        }
+
+        .avatar span {
+            font-size: 3rem;
+            font-weight: 500;
+            color: white;
+            letter-spacing: 1px;
+            font-family: monospace;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            background: linear-gradient(125deg, #1f3a47, #2b5f6b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1rem;
+            color: #4a6272;
+            border-top: 1px solid #e0e7ef;
+            display: inline-block;
+            padding-top: 0.6rem;
+            margin-top: 0.3rem;
+            font-weight: 450;
+        }
+
+        /* 三列网格布局 (三个主要栏目) */
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 通用卡片样式 */
+        .card {
+            background: #ffffff;
+            border-radius: 1.75rem;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s ease;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(0px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.03);
+        }
+
+        .card-header {
+            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+            border-bottom: 2px solid #eef2f8;
+        }
+
+        .card-header h2 {
+            font-size: 1.55rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1f3e48;
+        }
+
+        .card-header h2 i {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        .card-content {
+            padding: 1.25rem 1.5rem 1.8rem 1.5rem;
+            flex: 1;
+        }
+
+        /* 个人简介区域特殊样式 */
+        .bio-text {
+            font-size: 1rem;
+            color: #2c4556;
+            margin-bottom: 1.6rem;
+            line-height: 1.6;
+        }
+
+        .bio-detail {
+            background: #f8fafd;
+            padding: 0.9rem 1rem;
+            border-radius: 1.2rem;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #2b7a6e;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            background: #eff3f8;
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            color: #1f5e6e;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .contact-links a:hover {
+            background: #e0e8f2;
+            color: #0a3e4a;
+        }
+
+        /* 项目列表 & 文章列表 通用列表样式 */
+        .item-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .item-list li {
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid #ecf1f7;
+            padding-bottom: 1rem;
+        }
+
+        .item-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item-title {
+            font-weight: 650;
+            font-size: 1rem;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color: #1e3b46;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-title a {
+            text-decoration: none;
+            color: #1e3b46;
+            transition: color 0.2s;
+        }
+
+        .item-title a:hover {
+            color: #2b8c7a;
+            text-decoration: underline;
+        }
+
+        .item-meta {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: #6f8a9c;
+            background: #f0f4f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: #4c6a7c;
+            margin-top: 0.25rem;
+            line-height: 1.45;
+        }
+
+        /* 标签/技术栈微标记 */
+        .tech-tag {
+            display: inline-block;
+            background: #eef2f7;
+            font-size: 0.7rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 30px;
+            margin-right: 0.5rem;
+            margin-top: 0.4rem;
+            color: #2c6b6b;
+            font-weight: 450;
+        }
+
+        /* 文章分类小标 */
+        .category-badge {
+            background: #e9ecef;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+            color: #4c6a6f;
+        }
+
+        .more-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #2b7a6e;
+            text-decoration: none;
+            border-bottom: 1px dashed #bdd3e0;
+        }
+
+        .more-link:hover {
+            color: #0f5c50;
+            border-bottom-color: #2b7a6e;
+        }
+
+        /* 页脚 */
+        .footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 1.8rem 0.5rem;
+            border-top: 1px solid #e2e8f0;
+            color: #6a7e8f;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .card-header h2 {
+                font-size: 1.35rem;
+            }
+            .card-content {
+                padding: 1rem 1.25rem 1.5rem;
+            }
+            .grid-three {
+                gap: 1.2rem;
+            }
+        }
+
+        /* 模拟文章/项目内容 — 完全符合 edwardp20 风格 */
+        .highlight-number {
+            font-family: monospace;
+            font-weight: 600;
+            background: #f0f4f9;
+            padding: 0px 5px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 头部 Hero — edwardp20 个人标识 -->
+    <div class="hero">
+        <div class="avatar">
+            <span>ep</span>
+        </div>
+        <h1>edwardp20</h1>
+        <div class="tagline">developer  创造简洁有力的代码</div>
+    </div>
+
+    <!-- 三个核心栏目：个人简介 | 项目列表 | 文章列表 -->
+    <div class="grid-three">
+        
+        <!-- 栏目1：个人简介 (Profile) -->
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    <span>👤</span> 个人简介
+                </h2>
+            </div>
+            <div class="card-content">
+                <div class="bio-text">
+                    你好，我是 <strong>edwardp20</strong>。全栈开发者，热衷于系统设计、开源工具链与交互式可视化。
+                    相信优雅的代码能塑造可靠的产品。
+                </div>
+                <div class="bio-detail">
+                    🌱 目前主要探索: <strong>Java</strong>
+                </div>
+                <div class="contact-links">
+                    <a href="http://github.com/edwardp20/">GitHub · edwardp20</a>
+                </div>
+                <!-- 小彩蛋: 体现身份 -->
+                <div style="margin-top: 1.2rem; font-size: 0.7rem; color: #8aa0b0;">
+                    ⚡ 常用工具链: Java , Python
+                </div>
+            </div>
+        </div>
+
+        <!-- 栏目2：项目列表 (Projects) -->
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    <span>📁</span> 项目列表
+                </h2>
+            </div>
+            <div class="card-content">
+                <ul class="item-list">
+                    <li>
+                        <div class="item-title">
+                            <a href="http://github.com/edwardp20/myjava-app/">myjava-app</a>
+                            <span class="item-meta">2025-2026</span>
+                        </div>
+                        <div class="item-desc">
+                            个人学习的Java代码
+                            <div>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">learn-programming</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a href="moreproject.html" class="more-link">查看全部项目 →</a>
+            </div>
+        </div>
+
+        <!-- 栏目3：文章列表 (Articles/Blog) -->
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    <span>📝</span> 文章列表
+                </h2>
+            </div>
+            <div class="card-content">
+                <ul class="item-list">
+                    <li>
+                        <div class="item-title">
+                            <a href="#">test</a>
+                            <span class="item-meta">2025.02</span>
+                        </div>
+                        <div class="item-desc">
+                            test
+                            <span class="category-badge">#test</span>
+                        </div>
+                    </li>
+                </ul>
+                <a href="moretext.html" class="more-link">浏览全部文章 →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 可选: 简约脚注，体现 edwardp20 的个性 -->
+    <div class="footer">
+        <span>copyleft 2026 edwardp20</span><br>
+    </div>
+</div>
+</body>
+</html>

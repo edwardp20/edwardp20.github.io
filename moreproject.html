@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>edwardp20 · 全部项目</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafcff;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            color: #1e2f3c;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* 导航栏 - 与文章列表风格完全一致 */
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e9f2;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 1.7rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1f3e48, #2b6f6b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #3a6270;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1f8a7a;
+        }
+
+        /* 页面头部 */
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a3b44;
+            letter-spacing: -0.3px;
+        }
+
+        .page-header p {
+            color: #5e7e8e;
+            margin-top: 0.5rem;
+            border-left: 3px solid #86b3aa;
+            padding-left: 1rem;
+        }
+
+        /* 项目列表网格布局 - 与文章列表风格一致但采用网格适配多个项目 */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s ease;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.8rem;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            font-weight: 650;
+            color: #1f4e58;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .project-badge {
+            background: #e8f0f3;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            color: #2a6b6b;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: #6f8da0;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: #486c7c;
+            max-width: 85%;
+        }
+
+        .feature-list {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: #edf3f9;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            color: #2a6b6b;
+        }
+
+        /* 跳转按钮 - 风格与文章列表的阅读全文按钮完全一致 */
+        .launch-btn {
+            background: #1f5e66;
+            color: white;
+            text-decoration: none;
+            padding: 0.55rem 1.6rem;
+            border-radius: 3rem;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            white-space: nowrap;
+        }
+
+        .launch-btn:hover {
+            background: #0f4a52;
+            transform: scale(1.02);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        /* 未来项目提示（优雅占位，表示后续扩展） */
+        .future-note {
+            background: #f9fbfe;
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.8rem;
+            text-align: center;
+            border: 1px dashed #cbdbe0;
+            color: #638596;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 1.8rem 0.5rem;
+            border-top: 1px solid #e2e9f0;
+            color: #6d8a9c;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 700px) {
+            .project-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1.2rem;
+            }
+            .project-desc {
+                max-width: 100%;
+            }
+            .launch-btn {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 导航栏 (与博客文章列表完全一致) -->
+    <div class="nav-bar">
+        <div class="logo">
+            <a href="#">edwardp20</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">博客主页</a>
+        </div>
+    </div>
+
+    <!-- 页面头部 -->
+    <div class="page-header">
+        <h1>🧰 全部项目</h1>
+    </div>
+
+    <div class="projects-grid">
+        <!-- 唯一示范项目：双摆模拟器 (风格与文章卡片完全统一，跳转至独立项目页) -->
+        <div class="project-card">
+            <div class="project-info">
+                <div class="project-title">
+                    myjava-app
+                </div>
+                <div class="project-meta">
+                    <span>📅 2025-2026</span>
+                    <span>⚡ 版本 1.15.1</span>
+                </div>
+                <div class="project-desc">
+                    经典双摆运动的高精度模拟，支持实时角度调节、0.5~50倍速平滑变速、暂停/启动及轨迹拖尾。
+                    基于拉格朗日力学方程，子步长积分优化，极速模式下依然稳定流畅。
+                </div>
+                <div class="feature-list">
+                    <span class="feature-tag">#Java</span>
+                </div>
+            </div>
+            <div>
+                <!-- 超链接按钮：跳转到独立项目页面 (double-pendulum.html) 完全符合博客列表跳转风格 -->
+                <a href="http://github.com/edwardp20/myjava-app/" class="launch-btn">查看项目 →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 未来扩展提示（与文章列表的 future-note 风格一致） -->
+    <div class="future-note">
+        ✨ 更多精彩项目正在开发中 · 敬请期待
+    </div>
+
+    <div class="footer">
+        <span>copyleft 2026 edwardp20</span><br>
+    </div>
+</div>
+
+<!-- 说明：
+     本页面是项目列表页，风格与博客文章列表 (moretext.html) 完全一致。
+     目前包含一个示范项目「双摆模拟器」，点击「体验项目」按钮即可跳转到 double-pendulum.html。
+     用户可将 double-pendulum.html 放置于同目录下，确保跳转生效。
+     页面结构、配色、卡片交互、导航栏均与文章列表保持相同视觉语言。
+-->
+</body>
+</html>
