@@ -74,10 +74,10 @@
             font-weight: 450;
         }
 
-        /* 三列网格布局 (三个主要栏目) */
-        .grid-three {
+        /* 四列网格布局 (四个栏目) */
+        .grid-four {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 0.5rem;
         }
@@ -259,6 +259,49 @@
             border-bottom-color: #2b7a6e;
         }
 
+        /* 工具集专用按钮样式 (与整体风格协调，突出交互感) */
+        .tool-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(95deg, #eef3fc, #ffffff);
+            border: 1px solid #dce5f0;
+            border-radius: 2rem;
+            padding: 1rem 1.2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #1f5e6e;
+            transition: all 0.25s ease;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .tool-button:hover {
+            background: linear-gradient(95deg, #e5eef9, #ffffff);
+            border-color: #c2d2e3;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.1);
+            color: #0a4a58;
+        }
+
+        .tool-button:active {
+            transform: translateY(1px);
+        }
+
+        .tool-icon {
+            font-size: 1.5rem;
+        }
+
+        .tool-description {
+            font-size: 0.85rem;
+            color: #5c7b8c;
+            margin-top: 0.8rem;
+            text-align: center;
+            line-height: 1.4;
+        }
+
         /* 页脚 */
         .footer {
             margin-top: 4rem;
@@ -269,7 +312,7 @@
             font-size: 0.8rem;
         }
 
-        @media (max-width: 680px) {
+        @media (max-width: 800px) {
             .hero h1 {
                 font-size: 2rem;
             }
@@ -279,12 +322,11 @@
             .card-content {
                 padding: 1rem 1.25rem 1.5rem;
             }
-            .grid-three {
+            .grid-four {
                 gap: 1.2rem;
             }
         }
 
-        /* 模拟文章/项目内容 — 完全符合 edwardp20 风格 */
         .highlight-number {
             font-family: monospace;
             font-weight: 600;
@@ -303,13 +345,13 @@
             <span>ep</span>
         </div>
         <h1>edwardp20</h1>
-        <div class="tagline">developer  创造简洁有力的代码</div>
+        <div class="tagline">developer · 创造简洁有力的代码</div>
     </div>
 
-    <!-- 三个核心栏目：个人简介 | 项目列表 | 文章列表 -->
-    <div class="grid-three">
+    <!-- 四个核心栏目：个人简介 | 项目列表 | 文章列表 | 工具集 (新增) -->
+    <div class="grid-four">
         
-        <!-- 栏目1：个人简介 (Profile) -->
+        <!-- 栏目1：个人简介 (Profile) 完全保留原有风格 -->
         <div class="card">
             <div class="card-header">
                 <h2>
@@ -327,14 +369,13 @@
                 <div class="contact-links">
                     <a href="http://github.com/edwardp20/">GitHub · edwardp20</a>
                 </div>
-                <!-- 小彩蛋: 体现身份 -->
                 <div style="margin-top: 1.2rem; font-size: 0.7rem; color: #8aa0b0;">
                     ⚡ 常用工具链: Java , Python
                 </div>
             </div>
         </div>
 
-        <!-- 栏目2：项目列表 (Projects) -->
+        <!-- 栏目2：项目列表 (Projects) 与原有风格完全一致 -->
         <div class="card">
             <div class="card-header">
                 <h2>
@@ -361,7 +402,7 @@
             </div>
         </div>
 
-        <!-- 栏目3：文章列表 (Articles/Blog) -->
+        <!-- 栏目3：文章列表 (Articles/Blog) 完全保留原有风格 -->
         <div class="card">
             <div class="card-header">
                 <h2>
@@ -372,7 +413,7 @@
                 <ul class="item-list">
                     <li>
                         <div class="item-title">
-                            <a href="#">test</a>
+                            <a href="blog/test.md">test</a>
                             <span class="item-meta">2025.02</span>
                         </div>
                         <div class="item-desc">
@@ -384,9 +425,28 @@
                 <a href="moretext.html" class="more-link">浏览全部文章 →</a>
             </div>
         </div>
+
+        <!-- 栏目4：工具集 (Tools) - 全新板块，包含超链接按钮跳转到外部工具集页面 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    <span>🛠️</span> 工具集
+                </h2>
+            </div>
+            <div class="card-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <!-- 超链接按钮，跳转到工具集页面 (tools.html) 
+                     符合博客整体视觉，点击后在新页面或当前页打开均可 (target="_self" 保持同窗口跳转) -->
+                <a href="tools.html" class="tool-button">
+                    <span class="tool-icon">🔧</span>
+                    <span>访问工具集 →</span>
+                </a>
+                <!-- 简单装饰，保持卡片底部留白统一 -->
+                <div style="margin-top: 0.8rem;"></div>
+            </div>
+        </div>
     </div>
 
-    <!-- 可选: 简约脚注，体现 edwardp20 的个性 -->
+    <!-- 页脚 (与原有风格完全一致) -->
     <div class="footer">
         <span>copyleft 2026 edwardp20</span><br>
     </div>
