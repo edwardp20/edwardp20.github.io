@@ -25,7 +25,6 @@
             padding: 2rem 1.5rem;
         }
         
-        /* 导航栏 */
         .nav-bar {
             display: flex;
             justify-content: space-between;
@@ -66,7 +65,6 @@
             color: #1f8a7a;
         }
         
-        /* 页面头部 */
         .page-header {
             margin-bottom: 2.5rem;
         }
@@ -78,14 +76,6 @@
             letter-spacing: -0.3px;
         }
         
-        .page-header p {
-            color: #5e7e8e;
-            margin-top: 0.5rem;
-            border-left: 3px solid #86b3aa;
-            padding-left: 1rem;
-        }
-        
-        /* 文章列表布局 (卡片式) */
         .articles-grid {
             display: flex;
             flex-direction: column;
@@ -152,7 +142,6 @@
             color: #2a6b6b;
         }
         
-        /* 超链接按钮 - 跳转到专门的文章网页 (文章内容独立) */
         .read-btn {
             background: #1f5e66;
             color: white;
@@ -173,18 +162,6 @@
             background: #0f4a52;
             transform: scale(1.02);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-        }
-        
-        /* 未来文章提示（表示还有后续扩展，但不影响唯一示范文章） */
-        .future-note {
-            background: #f9fbfe;
-            border-radius: 1.5rem;
-            padding: 1.2rem 1.8rem;
-            text-align: center;
-            border: 1px dashed #cbdbe0;
-            color: #638596;
-            font-size: 0.85rem;
-            margin-top: 1rem;
         }
         
         .footer {
@@ -215,7 +192,6 @@
 
 <body>
     <div class="container">
-        <!-- 导航栏 (保持与博客风格统一) -->
         <div class="nav-bar">
             <div class="logo">
                 <a href="#">edwardp20</a>
@@ -225,13 +201,12 @@
             </div>
         </div>
 
-        <!-- 页面头部：全部文章列表页 -->
         <div class="page-header">
             <h1>📚 全部文章</h1>
         </div>
 
         <div class="articles-grid">
-            <!-- 唯一一篇示范文章卡片 (超链接跳转专门文章页) -->
+            <!-- 第一篇文章 - 正确的并列结构 -->
             <div class="article-card">
                 <div class="article-info">
                     <div class="article-title">第一篇文章</div>
@@ -248,47 +223,36 @@
                     </div>
                 </div>
                 <div>
-                    <!-- 超链接按钮：跳转到专门的文章网页 (article-demo.html) 
-                     用户需要将独立文章页放在同目录下，这里明确指向独立内容页 -->
                     <a href="blog/viewer.html?md=1.md" class="read-btn">📖 阅读全文 →</a>
-                </div>
-
-                <div class="article-card">
-                    <div class="article-info">
-                        <div class="article-title">test</div>
-                        <div class="article-meta">
-                            <span>📅 2025年3月12日</span>
-                            <span>✍️ edwardp20</span>
-                            <span>⏱ 预计阅读 8 分钟</span>
-                        </div>
-                        <div class="article-desc">
-                            test
-                        </div>
-                        <div class="tag-list">
-                            <span class="tag">#test</span>
-                        </div>
-                    </div>
-                    <div>
-                        <!-- 超链接按钮：跳转到专门的文章网页 (article-demo.html) 
-                     用户需要将独立文章页放在同目录下，这里明确指向独立内容页 -->
-                        <a href="blog/viewer.html?md=test.md" class="read-btn">📖 阅读全文 →</a>
-                    </div>
                 </div>
             </div>
 
-            <!-- 未来扩展提示（仅示意更多文章将在后续添加，不影响当前唯一示范文章） -->
-            <div class="footer">
-                <span>copyleft 2026 edwardp20</span><br>
+            <!-- 第二篇文章 - 正确并列，不在第一篇文章内部 -->
+            <div class="article-card">
+                <div class="article-info">
+                    <div class="article-title">test</div>
+                    <div class="article-meta">
+                        <span>📅 2025年3月12日</span>
+                        <span>✍️ edwardp20</span>
+                        <span>⏱ 预计阅读 8 分钟</span>
+                    </div>
+                    <div class="article-desc">
+                        test
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#test</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="blog/viewer.html?md=test.md" class="read-btn">📖 阅读全文 →</a>
+                </div>
             </div>
         </div>
 
-        <!-- 
-    重要说明：由于用户要求“文章内容网页暂时不要为我单独写”，
-    因此本页面仅包含全部文章的列表与跳转按钮，没有内嵌文章正文。
-    超链接指向 "article-demo.html"，这是预期的独立文章页面。
-    当用户后续需要时可自行创建该文件，或者保持当前纯列表形态。
-    完全满足需求：仅实现全部文章网页，不嵌入文章正文内容。
--->
+        <div class="footer">
+            <span>copyleft 2026 edwardp20</span><br>
+        </div>
+    </div>
 </body>
 
 </html>
