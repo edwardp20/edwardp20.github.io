@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -10,20 +11,20 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             background: #fafcff;
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
             color: #1e2f3c;
             line-height: 1.5;
         }
-
+        
         .container {
             max-width: 1120px;
             margin: 0 auto;
             padding: 2rem 1.5rem;
         }
-
+        
         /* 导航栏 */
         .nav-bar {
             display: flex;
@@ -35,7 +36,7 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid #e2e9f2;
         }
-
+        
         .logo a {
             text-decoration: none;
             font-size: 1.7rem;
@@ -46,12 +47,12 @@
             color: transparent;
             letter-spacing: -0.3px;
         }
-
+        
         .nav-links {
             display: flex;
             gap: 1.8rem;
         }
-
+        
         .nav-links a {
             text-decoration: none;
             color: #3a6270;
@@ -59,31 +60,31 @@
             transition: color 0.2s;
             font-size: 0.95rem;
         }
-
+        
         .nav-links a:hover,
         .nav-links a.active {
             color: #1f8a7a;
         }
-
+        
         /* 页面头部 */
         .page-header {
             margin-bottom: 2.5rem;
         }
-
+        
         .page-header h1 {
             font-size: 2.2rem;
             font-weight: 700;
             color: #1a3b44;
             letter-spacing: -0.3px;
         }
-
+        
         .page-header p {
             color: #5e7e8e;
             margin-top: 0.5rem;
             border-left: 3px solid #86b3aa;
             padding-left: 1rem;
         }
-
+        
         /* 文章列表布局 (卡片式) */
         .articles-grid {
             display: flex;
@@ -91,7 +92,7 @@
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
-
+        
         .article-card {
             background: #ffffff;
             border-radius: 1.5rem;
@@ -104,23 +105,23 @@
             align-items: center;
             padding: 1.2rem 1.8rem;
         }
-
+        
         .article-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
         }
-
+        
         .article-info {
             flex: 1;
         }
-
+        
         .article-title {
             font-size: 1.35rem;
             font-weight: 650;
             color: #1f4e58;
             margin-bottom: 0.4rem;
         }
-
+        
         .article-meta {
             display: flex;
             gap: 1rem;
@@ -129,20 +130,20 @@
             margin-bottom: 0.5rem;
             flex-wrap: wrap;
         }
-
+        
         .article-desc {
             font-size: 0.85rem;
             color: #486c7c;
             max-width: 85%;
         }
-
+        
         .tag-list {
             display: flex;
             gap: 0.5rem;
             margin-top: 0.6rem;
             flex-wrap: wrap;
         }
-
+        
         .tag {
             background: #edf3f9;
             padding: 0.15rem 0.7rem;
@@ -150,7 +151,7 @@
             font-size: 0.7rem;
             color: #2a6b6b;
         }
-
+        
         /* 超链接按钮 - 跳转到专门的文章网页 (文章内容独立) */
         .read-btn {
             background: #1f5e66;
@@ -167,13 +168,13 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             white-space: nowrap;
         }
-
+        
         .read-btn:hover {
             background: #0f4a52;
             transform: scale(1.02);
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
         }
-
+        
         /* 未来文章提示（表示还有后续扩展，但不影响唯一示范文章） */
         .future-note {
             background: #f9fbfe;
@@ -185,7 +186,7 @@
             font-size: 0.85rem;
             margin-top: 1rem;
         }
-
+        
         .footer {
             margin-top: 3rem;
             text-align: center;
@@ -194,7 +195,7 @@
             color: #6d8a9c;
             font-size: 0.8rem;
         }
-
+        
         @media (max-width: 700px) {
             .article-card {
                 flex-direction: column;
@@ -211,55 +212,77 @@
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-    <!-- 导航栏 (保持与博客风格统一) -->
-    <div class="nav-bar">
-        <div class="logo">
-            <a href="#">edwardp20</a>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">博客主页</a>
-        </div>
-    </div>
-
-    <!-- 页面头部：全部文章列表页 -->
-    <div class="page-header">
-        <h1>📚 全部文章</h1>
-    </div>
-
-    <div class="articles-grid">
-        <!-- 唯一一篇示范文章卡片 (超链接跳转专门文章页) -->
-        <div class="article-card">
-            <div class="article-info">
-                <div class="article-title">test</div>
-                <div class="article-meta">
-                    <span>📅 2025年3月12日</span>
-                    <span>✍️ edwardp20</span>
-                    <span>⏱ 预计阅读 8 分钟</span>
-                </div>
-                <div class="article-desc">
-                    test
-                </div>
-                <div class="tag-list">
-                    <span class="tag">#test</span>
-                </div>
+    <div class="container">
+        <!-- 导航栏 (保持与博客风格统一) -->
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="#">edwardp20</a>
             </div>
-            <div>
-                <!-- 超链接按钮：跳转到专门的文章网页 (article-demo.html) 
+            <div class="nav-links">
+                <a href="index.html">博客主页</a>
+            </div>
+        </div>
+
+        <!-- 页面头部：全部文章列表页 -->
+        <div class="page-header">
+            <h1>📚 全部文章</h1>
+        </div>
+
+        <div class="articles-grid">
+            <!-- 唯一一篇示范文章卡片 (超链接跳转专门文章页) -->
+            <div class="article-card">
+                <div class="article-info">
+                    <div class="article-title">第一篇文章</div>
+                    <div class="article-meta">
+                        <span>📅 2026年6月14日</span>
+                        <span>✍️ edwardp20</span>
+                        <span>⏱ 预计阅读 1 分钟</span>
+                    </div>
+                    <div class="article-desc">
+                        只是这个网站的第一篇文章
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#114514</span>
+                    </div>
+                </div>
+                <div>
+                    <!-- 超链接按钮：跳转到专门的文章网页 (article-demo.html) 
                      用户需要将独立文章页放在同目录下，这里明确指向独立内容页 -->
-                <a href="blog/viewer.html?md=test.md" class="read-btn">📖 阅读全文 →</a>
+                    <a href="blog/viewer.html?md=1.md" class="read-btn">📖 阅读全文 →</a>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-info">
+                        <div class="article-title">test</div>
+                        <div class="article-meta">
+                            <span>📅 2025年3月12日</span>
+                            <span>✍️ edwardp20</span>
+                            <span>⏱ 预计阅读 8 分钟</span>
+                        </div>
+                        <div class="article-desc">
+                            test
+                        </div>
+                        <div class="tag-list">
+                            <span class="tag">#test</span>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 超链接按钮：跳转到专门的文章网页 (article-demo.html) 
+                     用户需要将独立文章页放在同目录下，这里明确指向独立内容页 -->
+                        <a href="blog/viewer.html?md=test.md" class="read-btn">📖 阅读全文 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 未来扩展提示（仅示意更多文章将在后续添加，不影响当前唯一示范文章） -->
+            <div class="footer">
+                <span>copyleft 2026 edwardp20</span><br>
             </div>
         </div>
-    </div>
 
-    <!-- 未来扩展提示（仅示意更多文章将在后续添加，不影响当前唯一示范文章） -->
-    <div class="footer">
-        <span>copyleft 2026 edwardp20</span><br>
-    </div>
-</div>
-
-<!-- 
+        <!-- 
     重要说明：由于用户要求“文章内容网页暂时不要为我单独写”，
     因此本页面仅包含全部文章的列表与跳转按钮，没有内嵌文章正文。
     超链接指向 "article-demo.html"，这是预期的独立文章页面。
@@ -267,4 +290,5 @@
     完全满足需求：仅实现全部文章网页，不嵌入文章正文内容。
 -->
 </body>
+
 </html>
