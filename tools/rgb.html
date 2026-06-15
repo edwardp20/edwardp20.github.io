@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -10,7 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             background: #f5f7fc;
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
@@ -18,12 +19,12 @@
             line-height: 1.5;
             padding: 2rem 1rem;
         }
-
+        
         .container {
             max-width: 1100px;
             margin: 0 auto;
         }
-
+        
         /* 导航栏 - 与博客风格统一 */
         .nav-bar {
             display: flex;
@@ -35,7 +36,7 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid #e2e9f2;
         }
-
+        
         .logo a {
             text-decoration: none;
             font-size: 1.7rem;
@@ -46,12 +47,12 @@
             color: transparent;
             letter-spacing: -0.3px;
         }
-
+        
         .nav-links {
             display: flex;
             gap: 1.8rem;
         }
-
+        
         .nav-links a {
             text-decoration: none;
             color: #3a6270;
@@ -59,16 +60,16 @@
             transition: color 0.2s;
             font-size: 0.95rem;
         }
-
+        
         .nav-links a:hover {
             color: #1f8a7a;
         }
-
+        
         /* 工具头部 */
         .tool-header {
             margin-bottom: 2rem;
         }
-
+        
         .tool-header h1 {
             font-size: 2rem;
             font-weight: 700;
@@ -78,7 +79,7 @@
             gap: 0.75rem;
             flex-wrap: wrap;
         }
-
+        
         .tool-header .badge {
             background: #e8f0f3;
             font-size: 0.8rem;
@@ -87,14 +88,14 @@
             border-radius: 30px;
             color: #2a6b6b;
         }
-
+        
         .tool-header p {
             color: #5e7e8e;
             margin-top: 0.5rem;
             border-left: 3px solid #86b3aa;
             padding-left: 1rem;
         }
-
+        
         /* 主工具卡片 */
         .tool-card {
             background: #ffffff;
@@ -103,12 +104,12 @@
             overflow: hidden;
             margin-bottom: 2rem;
         }
-
+        
         .tool-card-header {
             padding: 1.5rem 1.8rem 0.5rem 1.8rem;
             border-bottom: 2px solid #eef2f8;
         }
-
+        
         .tool-card-header h2 {
             font-size: 1.4rem;
             font-weight: 600;
@@ -117,16 +118,16 @@
             align-items: center;
             gap: 8px;
         }
-
+        
         .tool-card-content {
             padding: 1.8rem;
         }
-
+        
         /* 输入区域 */
         .input-group {
             margin-bottom: 2rem;
         }
-
+        
         .input-label {
             display: block;
             font-weight: 600;
@@ -134,14 +135,14 @@
             margin-bottom: 0.6rem;
             font-size: 0.9rem;
         }
-
+        
         .input-row {
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
             align-items: center;
         }
-
+        
         .code-input {
             flex: 2;
             min-width: 200px;
@@ -155,17 +156,17 @@
             outline: none;
             color: #1e2f3c;
         }
-
+        
         .code-input:focus {
             border-color: #2b8c7a;
             box-shadow: 0 0 0 3px rgba(43, 140, 122, 0.1);
         }
-
+        
         .code-input::placeholder {
             color: #a9c0cd;
             font-family: system-ui;
         }
-
+        
         /* 按钮样式 - 与工具集按钮风格一致 */
         .action-btn {
             background: linear-gradient(95deg, #eef3fc, #ffffff);
@@ -182,7 +183,7 @@
             gap: 8px;
             font-family: inherit;
         }
-
+        
         .action-btn:hover {
             background: linear-gradient(95deg, #e5eef9, #ffffff);
             border-color: #c2d2e3;
@@ -190,11 +191,11 @@
             box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.1);
             color: #0a4a58;
         }
-
+        
         .action-btn:active {
             transform: translateY(1px);
         }
-
+        
         /* 预览区域 */
         .preview-area {
             background: #fafcff;
@@ -203,7 +204,7 @@
             margin: 1.5rem 0;
             border: 1px solid #ecf1f7;
         }
-
+        
         .preview-title {
             font-size: 0.85rem;
             font-weight: 600;
@@ -212,7 +213,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
+        
         /* 颜色图像 (RPG风格色块) */
         .color-display {
             width: 100%;
@@ -223,7 +224,7 @@
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.05);
             border: 1px solid rgba(0,0,0,0.05);
         }
-
+        
         /* 信息网格 */
         .info-grid {
             display: grid;
@@ -231,7 +232,7 @@
             gap: 1rem;
             margin-top: 1.5rem;
         }
-
+        
         .info-card {
             background: #f8fafd;
             border-radius: 1rem;
@@ -239,7 +240,7 @@
             text-align: center;
             border: 1px solid #ecf1f7;
         }
-
+        
         .info-label {
             font-size: 0.7rem;
             text-transform: uppercase;
@@ -247,7 +248,7 @@
             letter-spacing: 0.5px;
             margin-bottom: 0.4rem;
         }
-
+        
         .info-value {
             font-size: 1.1rem;
             font-weight: 700;
@@ -255,7 +256,7 @@
             color: #1f4e58;
             word-break: break-all;
         }
-
+        
         /* 格式提示 */
         .format-hint {
             background: #f0f6fa;
@@ -270,13 +271,13 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .examples {
             display: flex;
             gap: 0.8rem;
             flex-wrap: wrap;
         }
-
+        
         .example-badge {
             background: white;
             padding: 0.2rem 0.8rem;
@@ -287,13 +288,13 @@
             border: 1px solid #cbdde9;
             transition: all 0.2s;
         }
-
+        
         .example-badge:hover {
             background: #e2eef5;
             border-color: #2b8c7a;
             transform: translateY(-1px);
         }
-
+        
         /* 页脚 */
         .footer {
             margin-top: 3rem;
@@ -303,7 +304,7 @@
             color: #6d8a9c;
             font-size: 0.8rem;
         }
-
+        
         @media (max-width: 640px) {
             .tool-card-content {
                 padding: 1.2rem;
@@ -312,7 +313,7 @@
                 height: 160px;
             }
         }
-
+        
         /* 错误状态简单提示 */
         .error-message {
             color: #c55a5a;
@@ -322,263 +323,272 @@
         }
     </style>
 </head>
+
 <body>
-<div class="container">
-
-    <!-- 工具头部 -->
-    <div class="tool-header">
-        <h1>
-            RPG颜色代码工具
-        </h1>
-        <p>输入任意颜色代码（Hex / RGB / 颜色名称）实时生成对应的色彩图像与详细信息</p>
-    </div>
-
-    <!-- 主工具卡片 -->
-    <div class="tool-card">
-        <div class="tool-card-header">
-            <h2>🔍 颜色解析器</h2>
-        </div>
-        <div class="tool-card-content">
-            <div class="input-group">
-                <label class="input-label">🎯 输入颜色代码</label>
-                <div class="input-row">
-                    <input type="text" id="colorInput" class="code-input" placeholder="例如: #2b8c7a, rgb(43, 140, 122), 钢青色, #FF5733" value="#2b8c7a">
-                    <button id="generateBtn" class="action-btn">
-                        🚀 生成颜色图像
-                    </button>
-                </div>
-                <div id="errorMsg" class="error-message"></div>
+    <div class="container">
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="#">edwardp20</a>
             </div>
-
-            <!-- 颜色图像预览区域 (RPG风格色块) -->
-            <div class="preview-area">
-                <div class="preview-title">🎨 RPG 颜色图像</div>
-                <div id="colorDisplay" class="color-display" style="background-color: #2b8c7a;"></div>
-            </div>
-
-            <!-- 颜色详细信息 -->
-            <div class="info-grid" id="infoGrid">
-                <!-- 动态填充颜色信息 -->
-            </div>
-
-            <!-- 格式提示与示例 -->
-            <div class="format-hint">
-                <span>✨ 支持格式：Hex (#RRGGBB) / RGB / 标准颜色名称</span>
-                <div class="examples">
-                    <span class="example-badge" data-color="#3498db">#3498db</span>
-                    <span class="example-badge" data-color="rgb(46, 204, 113)">翠绿色</span>
-                    <span class="example-badge" data-color="crimson">crimson</span>
-                    <span class="example-badge" data-color="#9b59b6">#9b59b6</span>
-                    <span class="example-badge" data-color="橙红色">橙红色</span>
-                </div>
+            <div class="nav-links">
+                <a href="index.html">博客主页</a>
             </div>
         </div>
+        <!-- 工具头部 -->
+        <div class="tool-header">
+            <h1>
+                RPG颜色代码工具
+            </h1>
+            <p>输入任意颜色代码（Hex / RGB / 颜色名称）实时生成对应的色彩图像与详细信息</p>
+        </div>
+
+        <!-- 主工具卡片 -->
+        <div class="tool-card">
+            <div class="tool-card-header">
+                <h2>🔍 颜色解析器</h2>
+            </div>
+            <div class="tool-card-content">
+                <div class="input-group">
+                    <label class="input-label">🎯 输入颜色代码</label>
+                    <div class="input-row">
+                        <input type="text" id="colorInput" class="code-input" placeholder="例如: #2b8c7a, rgb(43, 140, 122), 钢青色, #FF5733" value="#2b8c7a">
+                        <button id="generateBtn" class="action-btn">
+                            🚀 生成颜色图像
+                        </button>
+                    </div>
+                    <div id="errorMsg" class="error-message"></div>
+                </div>
+
+                <!-- 颜色图像预览区域 (RPG风格色块) -->
+                <div class="preview-area">
+                    <div class="preview-title">🎨 RPG 颜色图像</div>
+                    <div id="colorDisplay" class="color-display" style="background-color: #2b8c7a;"></div>
+                </div>
+
+                <!-- 颜色详细信息 -->
+                <div class="info-grid" id="infoGrid">
+                    <!-- 动态填充颜色信息 -->
+                </div>
+
+                <!-- 格式提示与示例 -->
+                <div class="format-hint">
+                    <span>✨ 支持格式：Hex (#RRGGBB) / RGB / 标准颜色名称</span>
+                    <div class="examples">
+                        <span class="example-badge" data-color="#3498db">#3498db</span>
+                        <span class="example-badge" data-color="rgb(46, 204, 113)">翠绿色</span>
+                        <span class="example-badge" data-color="crimson">crimson</span>
+                        <span class="example-badge" data-color="#9b59b6">#9b59b6</span>
+                        <span class="example-badge" data-color="橙红色">橙红色</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>copyleft 2026 edwardp20</span>
+        </div>
     </div>
 
-    <div class="footer">
-        <span>copyleft 2026 edwardp20</span>
-    </div>
-</div>
-
-<script>
-    (function() {
-        // DOM 元素
-        const colorInput = document.getElementById('colorInput');
-        const generateBtn = document.getElementById('generateBtn');
-        const colorDisplay = document.getElementById('colorDisplay');
-        const infoGrid = document.getElementById('infoGrid');
-        const errorMsgDiv = document.getElementById('errorMsg');
-
-        // 辅助函数：将任何有效的颜色格式转换为标准 Hex 字符串 (#RRGGBB)
-        // 使用动态 canvas 辅助 + 浏览器颜色解析能力（最可靠）
-        function getHexFromColor(inputValue) {
-            if (!inputValue || inputValue.trim() === '') return null;
-            
-            const trimmed = inputValue.trim();
-            
-            // 创建临时元素让浏览器解析颜色
-            const tempDiv = document.createElement('div');
-            tempDiv.style.color = trimmed;
-            document.body.appendChild(tempDiv);
-            const computedColor = window.getComputedStyle(tempDiv).color;
-            document.body.removeChild(tempDiv);
-            
-            // 如果 computedColor 是 'rgba(0, 0, 0, 0)' 或 'transparent' 且原始输入不是 transparent / 0 等情况
-            // 另外处理: 有些无效颜色会返回 rgb(0, 0, 0) 反而造成误判，需要额外校验
-            // 但若输入值明显为空或者无效，预检测常见无效。
-            if (!computedColor || computedColor === 'rgba(0, 0, 0, 0)' && trimmed !== 'transparent') {
-                // 再尝试另一种备用: 使用 new Option
-                const option = document.createElement('option');
-                option.style.color = trimmed;
-                const maybeColor = option.style.color;
-                if (maybeColor && maybeColor !== '') {
-                    // 简单解析 rgb
-                    const rgbMatch = maybeColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
-                    if (rgbMatch) {
-                        return rgbToHex(parseInt(rgbMatch[1]), parseInt(rgbMatch[2]), parseInt(rgbMatch[3]));
+    <script>
+        (function() {
+            // DOM 元素
+            const colorInput = document.getElementById('colorInput');
+            const generateBtn = document.getElementById('generateBtn');
+            const colorDisplay = document.getElementById('colorDisplay');
+            const infoGrid = document.getElementById('infoGrid');
+            const errorMsgDiv = document.getElementById('errorMsg');
+        
+            // 辅助函数：将任何有效的颜色格式转换为标准 Hex 字符串 (#RRGGBB)
+            // 使用动态 canvas 辅助 + 浏览器颜色解析能力（最可靠）
+            function getHexFromColor(inputValue) {
+                if (!inputValue || inputValue.trim() === '') return null;
+                
+                const trimmed = inputValue.trim();
+                
+                // 创建临时元素让浏览器解析颜色
+                const tempDiv = document.createElement('div');
+                tempDiv.style.color = trimmed;
+                document.body.appendChild(tempDiv);
+                const computedColor = window.getComputedStyle(tempDiv).color;
+                document.body.removeChild(tempDiv);
+                
+                // 如果 computedColor 是 'rgba(0, 0, 0, 0)' 或 'transparent' 且原始输入不是 transparent / 0 等情况
+                // 另外处理: 有些无效颜色会返回 rgb(0, 0, 0) 反而造成误判，需要额外校验
+                // 但若输入值明显为空或者无效，预检测常见无效。
+                if (!computedColor || computedColor === 'rgba(0, 0, 0, 0)' && trimmed !== 'transparent') {
+                    // 再尝试另一种备用: 使用 new Option
+                    const option = document.createElement('option');
+                    option.style.color = trimmed;
+                    const maybeColor = option.style.color;
+                    if (maybeColor && maybeColor !== '') {
+                        // 简单解析 rgb
+                        const rgbMatch = maybeColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+                        if (rgbMatch) {
+                            return rgbToHex(parseInt(rgbMatch[1]), parseInt(rgbMatch[2]), parseInt(rgbMatch[3]));
+                        }
                     }
+                    return null;
+                }
+                
+                // 解析 rgb(r, g, b) 或 rgba(r, g, b, a)
+                const rgbMatch = computedColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+                if (rgbMatch) {
+                    const r = parseInt(rgbMatch[1]);
+                    const g = parseInt(rgbMatch[2]);
+                    const b = parseInt(rgbMatch[3]);
+                    return rgbToHex(r, g, b);
+                }
+                
+                return null;
+            }
+            
+            // RGB 转 Hex
+            function rgbToHex(r, g, b) {
+                return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+            }
+            
+            // 获取 RGB 对象
+            function getRGBFromColor(inputValue) {
+                const hex = getHexFromColor(inputValue);
+                if (!hex) return null;
+                // 解析 hex -> rgb
+                let r = 0, g = 0, b = 0;
+                if (hex.length === 7) {
+                    r = parseInt(hex.slice(1, 3), 16);
+                    g = parseInt(hex.slice(3, 5), 16);
+                    b = parseInt(hex.slice(5, 7), 16);
+                    return { r, g, b, hex };
                 }
                 return null;
             }
             
-            // 解析 rgb(r, g, b) 或 rgba(r, g, b, a)
-            const rgbMatch = computedColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-            if (rgbMatch) {
-                const r = parseInt(rgbMatch[1]);
-                const g = parseInt(rgbMatch[2]);
-                const b = parseInt(rgbMatch[3]);
-                return rgbToHex(r, g, b);
+            // 获取颜色亮度 (WCAG 相对亮度算法简化用于文字推荐)
+            function getLuminance(r, g, b) {
+                const rsrgb = r / 255;
+                const gsrgb = g / 255;
+                const bsrgb = b / 255;
+                const rLin = rsrgb <= 0.03928 ? rsrgb / 12.92 : Math.pow((rsrgb + 0.055) / 1.055, 2.4);
+                const gLin = gsrgb <= 0.03928 ? gsrgb / 12.92 : Math.pow((gsrgb + 0.055) / 1.055, 2.4);
+                const bLin = bsrgb <= 0.03928 ? bsrgb / 12.92 : Math.pow((bsrgb + 0.055) / 1.055, 2.4);
+                return 0.2126 * rLin + 0.7152 * gLin + 0.0722 * bLin;
             }
             
-            return null;
-        }
-        
-        // RGB 转 Hex
-        function rgbToHex(r, g, b) {
-            return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
-        }
-        
-        // 获取 RGB 对象
-        function getRGBFromColor(inputValue) {
-            const hex = getHexFromColor(inputValue);
-            if (!hex) return null;
-            // 解析 hex -> rgb
-            let r = 0, g = 0, b = 0;
-            if (hex.length === 7) {
-                r = parseInt(hex.slice(1, 3), 16);
-                g = parseInt(hex.slice(3, 5), 16);
-                b = parseInt(hex.slice(5, 7), 16);
-                return { r, g, b, hex };
-            }
-            return null;
-        }
-        
-        // 获取颜色亮度 (WCAG 相对亮度算法简化用于文字推荐)
-        function getLuminance(r, g, b) {
-            const rsrgb = r / 255;
-            const gsrgb = g / 255;
-            const bsrgb = b / 255;
-            const rLin = rsrgb <= 0.03928 ? rsrgb / 12.92 : Math.pow((rsrgb + 0.055) / 1.055, 2.4);
-            const gLin = gsrgb <= 0.03928 ? gsrgb / 12.92 : Math.pow((gsrgb + 0.055) / 1.055, 2.4);
-            const bLin = bsrgb <= 0.03928 ? bsrgb / 12.92 : Math.pow((bsrgb + 0.055) / 1.055, 2.4);
-            return 0.2126 * rLin + 0.7152 * gLin + 0.0722 * bLin;
-        }
-        
-        // 根据亮度推荐文字颜色 (黑/白)
-        function getSuggestedTextColor(r, g, b) {
-            const luminance = getLuminance(r, g, b);
-            return luminance > 0.5 ? '#1e2f3c' : '#f5f7fc';
-        }
-        
-        // 显示颜色信息 & 更新图像
-        function updateColorInfoAndImage(colorCode) {
-            errorMsgDiv.style.display = 'none';
-            errorMsgDiv.innerText = '';
-            
-            if (!colorCode || colorCode.trim() === '') {
-                errorMsgDiv.innerText = '⚠️ 请输入颜色代码';
-                errorMsgDiv.style.display = 'block';
-                colorDisplay.style.backgroundColor = '#e2e8f0';
-                infoGrid.innerHTML = `<div class="info-card"><div class="info-label">状态</div><div class="info-value">等待输入</div></div>`;
-                return false;
+            // 根据亮度推荐文字颜色 (黑/白)
+            function getSuggestedTextColor(r, g, b) {
+                const luminance = getLuminance(r, g, b);
+                return luminance > 0.5 ? '#1e2f3c' : '#f5f7fc';
             }
             
-            const rgbData = getRGBFromColor(colorCode);
-            if (!rgbData) {
-                errorMsgDiv.innerText = `❌ 无法解析颜色 "${colorCode}"，请使用 Hex (#RRGGBB)、rgb(r,g,b) 或标准颜色名（如 red, steelblue）`;
-                errorMsgDiv.style.display = 'block';
-                colorDisplay.style.backgroundColor = '#e2e8f0';
-                infoGrid.innerHTML = `<div class="info-card"><div class="info-label">错误</div><div class="info-value">无法识别颜色格式</div></div>`;
-                return false;
+            // 显示颜色信息 & 更新图像
+            function updateColorInfoAndImage(colorCode) {
+                errorMsgDiv.style.display = 'none';
+                errorMsgDiv.innerText = '';
+                
+                if (!colorCode || colorCode.trim() === '') {
+                    errorMsgDiv.innerText = '⚠️ 请输入颜色代码';
+                    errorMsgDiv.style.display = 'block';
+                    colorDisplay.style.backgroundColor = '#e2e8f0';
+                    infoGrid.innerHTML = `<div class="info-card"><div class="info-label">状态</div><div class="info-value">等待输入</div></div>`;
+                    return false;
+                }
+                
+                const rgbData = getRGBFromColor(colorCode);
+                if (!rgbData) {
+                    errorMsgDiv.innerText = `❌ 无法解析颜色 "${colorCode}"，请使用 Hex (#RRGGBB)、rgb(r,g,b) 或标准颜色名（如 red, steelblue）`;
+                    errorMsgDiv.style.display = 'block';
+                    colorDisplay.style.backgroundColor = '#e2e8f0';
+                    infoGrid.innerHTML = `<div class="info-card"><div class="info-label">错误</div><div class="info-value">无法识别颜色格式</div></div>`;
+                    return false;
+                }
+                
+                const { r, g, b, hex } = rgbData;
+                const luminance = getLuminance(r, g, b);
+                const brightnessDesc = luminance > 0.6 ? '明亮' : (luminance > 0.3 ? '中等' : '深色');
+                
+                // 构建 CSS rgb 字符串
+                const rgbCss = `rgb(${r}, ${g}, ${b})`;
+                
+                // 更新色块背景
+                colorDisplay.style.backgroundColor = rgbCss;
+                
+                // 可选特效：增加一个微交互显示对比文字（在色块中央添加浮动提示？不需要复杂，但info足够）
+                // 更新信息网格
+                infoGrid.innerHTML = `
+                    <div class="info-card">
+                        <div class="info-label">🎨 HEX</div>
+                        <div class="info-value">${hex}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">🌈 RGB</div>
+                        <div class="info-value">${r}, ${g}, ${b}</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">💡 亮度</div>
+                        <div class="info-value">${brightnessDesc} (${luminance.toFixed(2)})</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">🎯 色彩代码</div>
+                        <div class="info-value" style="font-size:0.85rem;">${escapeHtml(colorCode)}</div>
+                    </div>
+                `;
+                
+                // 额外小修饰：给色块增加一个推荐文本色的小圆点 (动态改变文字建议不实际嵌入)
+                return true;
             }
             
-            const { r, g, b, hex } = rgbData;
-            const luminance = getLuminance(r, g, b);
-            const brightnessDesc = luminance > 0.6 ? '明亮' : (luminance > 0.3 ? '中等' : '深色');
+            // 简单的防XSS
+            function escapeHtml(str) {
+                return str.replace(/[&<>]/g, function(m) {
+                    if (m === '&') return '&amp;';
+                    if (m === '<') return '&lt;';
+                    if (m === '>') return '&gt;';
+                    return m;
+                });
+            }
             
-            // 构建 CSS rgb 字符串
-            const rgbCss = `rgb(${r}, ${g}, ${b})`;
+            // 处理生成事件
+            function handleGenerate() {
+                const rawCode = colorInput.value.trim();
+                updateColorInfoAndImage(rawCode);
+            }
             
-            // 更新色块背景
-            colorDisplay.style.backgroundColor = rgbCss;
+            // 初始化示例点击事件
+            function bindExamples() {
+                const examples = document.querySelectorAll('.example-badge');
+                examples.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const colorVal = el.getAttribute('data-color');
+                        if (colorVal) {
+                            colorInput.value = colorVal;
+                            updateColorInfoAndImage(colorVal);
+                        }
+                    });
+                });
+            }
             
-            // 可选特效：增加一个微交互显示对比文字（在色块中央添加浮动提示？不需要复杂，但info足够）
-            // 更新信息网格
-            infoGrid.innerHTML = `
-                <div class="info-card">
-                    <div class="info-label">🎨 HEX</div>
-                    <div class="info-value">${hex}</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-label">🌈 RGB</div>
-                    <div class="info-value">${r}, ${g}, ${b}</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-label">💡 亮度</div>
-                    <div class="info-value">${brightnessDesc} (${luminance.toFixed(2)})</div>
-                </div>
-                <div class="info-card">
-                    <div class="info-label">🎯 色彩代码</div>
-                    <div class="info-value" style="font-size:0.85rem;">${escapeHtml(colorCode)}</div>
-                </div>
-            `;
-            
-            // 额外小修饰：给色块增加一个推荐文本色的小圆点 (动态改变文字建议不实际嵌入)
-            return true;
-        }
-        
-        // 简单的防XSS
-        function escapeHtml(str) {
-            return str.replace(/[&<>]/g, function(m) {
-                if (m === '&') return '&amp;';
-                if (m === '<') return '&lt;';
-                if (m === '>') return '&gt;';
-                return m;
-            });
-        }
-        
-        // 处理生成事件
-        function handleGenerate() {
-            const rawCode = colorInput.value.trim();
-            updateColorInfoAndImage(rawCode);
-        }
-        
-        // 初始化示例点击事件
-        function bindExamples() {
-            const examples = document.querySelectorAll('.example-badge');
-            examples.forEach(el => {
-                el.addEventListener('click', () => {
-                    const colorVal = el.getAttribute('data-color');
-                    if (colorVal) {
-                        colorInput.value = colorVal;
-                        updateColorInfoAndImage(colorVal);
+            // 支持回车键
+            function bindEnterKey() {
+                colorInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        handleGenerate();
                     }
                 });
-            });
-        }
-        
-        // 支持回车键
-        function bindEnterKey() {
-            colorInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    handleGenerate();
-                }
-            });
-        }
-        
-        // 页面初始化默认显示预设颜色
-        function initDefault() {
-            // 初始值 #2b8c7a 已经在输入框内设置，手动触发一次显示
-            const initColor = colorInput.value.trim();
-            updateColorInfoAndImage(initColor);
-            bindExamples();
-            bindEnterKey();
-            generateBtn.addEventListener('click', handleGenerate);
-        }
-        
-        initDefault();
-    })();
-</script>
+            }
+            
+            // 页面初始化默认显示预设颜色
+            function initDefault() {
+                // 初始值 #2b8c7a 已经在输入框内设置，手动触发一次显示
+                const initColor = colorInput.value.trim();
+                updateColorInfoAndImage(initColor);
+                bindExamples();
+                bindEnterKey();
+                generateBtn.addEventListener('click', handleGenerate);
+            }
+            
+            initDefault();
+        })();
+    </script>
 </body>
+
 </html>
