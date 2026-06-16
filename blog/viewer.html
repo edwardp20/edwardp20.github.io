@@ -195,11 +195,7 @@
                     return response.text();
                 })
                 .then(markdown => {
-                // 允许 HTML 标签，关闭安全过滤
-                marked.setOptions({
-                    sanitize: false,
-                    breaks: true  // 可选，支持行内换行
-                });
+                
                      const html = marked.parse(markdown);
                     document.getElementById('content').innerHTML = html;
                 })
