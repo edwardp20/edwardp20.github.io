@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+    <h1>登录</h1>
+    <p style="font-size:14px; color:#555;">（模拟系统，仅供安全测试）</p>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+        <p>
+            <label>用户名：<input type="text" id="username" size="30"></label>
+        </p>
+        <p>
+            <label>密码：<input type="password" id="password" size="30"></label>
+        </p>
+        <p>
+            <button type="submit">登录</button>
+            <button type="reset">重置</button>
+        </p>
+    </form>
+    <div id="result" style="margin-top:10px;"></div>
+    <hr>
+    <p><a href="h.html" id="hLink">通关教程</a>（仅用于演示）</p>
+    <p><a href="../index.html" id="hLink">张辰曦的博客</a></p>
+
+    <script>
+        // 模拟数据库用户表
+        let fakeDB = [
+            { username: 'admin', password: 'secret' },
+            { username: 'user1', password: 'pass1' },
+            { username: 'test', password: '123456' }
+        ];
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result');
+
+            // 检测删库指令 (drop table / drop database)
+            const isDrop = /drop\s+table/i.test(username) || /drop\s+database/i.test(username) ||
+                           /drop\s+table/i.test(password) || /drop\s+database/i.test(password);
+
+            if (isDrop) {
+                // 模拟删库：清空数据库
+                fakeDB = [];
+                resultDiv.innerHTML = '<p style="color:red;">操作已执行</p>';
+                // 同时清除登录状态，让用户留在登录页
+                return false;
+            }
+
+            // 模拟SQL注入检测 (最简单的' or '1'='1 或 admin' --)
+            const isInjection = 
+                username.includes("'") || password.includes("'") ||
+                /or\s+1\s*=\s*1/i.test(username) || /or\s+1\s*=\s*1/i.test(password) ||
+                username.includes("--") || password.includes("--");
+
+            // 正常验证
+            const found = fakeDB.find(u => u.username === username && u.password === password);
+
+            if (isInjection || found) {
+                // 注入成功 或 正常用户登录 => 跳转到 q.html
+                // 但为了防止注入后直接跳转，我们把正常用户也视为"成功"（实际业务逻辑）
+                // 但为了演示，仅当注入或正确账号密码时跳转
+                if (isInjection || found) {
+                    // 模拟登录成功，跳转到 q.html
+                    window.location.href = 'q.html';
+                }
+            } else {
+                resultDiv.innerHTML = '<p style="color:red;">用户名或密码错误</p>';
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
